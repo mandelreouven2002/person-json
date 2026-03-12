@@ -1,0 +1,2444 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/person.schema.json",
+  "title": "Person",
+  "description": "A comprehensive definition of a human person",
+  "type": "object",
+  "$defs": {
+    "Money": {
+      "type": "object",
+      "description": "A monetary amount with its currency. Currency is an ISO 4217 code (e.g. ILS, USD, EUR).",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 currency code"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ]
+    },
+    "Address": {
+      "type": "object",
+      "description": "Reusable address object used throughout the schema wherever a physical location is needed",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string",
+          "description": "State, province, or district"
+        },
+        "country": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 (e.g. IL, US, FR)"
+        },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ]
+        },
+        "ZIP_code": {
+          "type": "string",
+          "description": "Postal / ZIP code"
+        },
+        "addition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional extra detail: building name, hospital, cemetery, floor, suite, landmark, etc. Null if not applicable."
+        }
+      }
+    },
+    "Other": {
+      "type": "object",
+      "description": "Reusable object used wherever a field or enum includes an 'other' option. Provides a description of what 'other' means in that specific context.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "const": "other",
+          "description": "Always the literal string 'other'"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Human-readable explanation of what 'other' means in this specific context. Null if no further detail is available."
+        }
+      },
+      "required": [
+        "value"
+      ]
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "guid",
+      "description": "Globally unique identifier (GUID)"
+    },
+    "meta": {
+      "type": "object",
+      "description": "Record metadata",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "source": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "name": {
+      "type": "object",
+      "description": "Full name breakdown",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "description": "Mr / Mrs / Dr / Prof / Sir / etc."
+        },
+        "given": {
+          "type": "string",
+          "description": "First / given name"
+        },
+        "middle": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "family": {
+          "type": "string",
+          "description": "Last / surname / family name"
+        },
+        "suffix": {
+          "type": "string",
+          "description": "Jr. / Sr. / III / PhD / etc."
+        },
+        "maiden": {
+          "type": "string",
+          "description": "Birth surname before marriage"
+        },
+        "preferred": {
+          "type": "string",
+          "description": "Name person prefers to be called"
+        },
+        "nickname": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "The nickname itself"
+              },
+              "context": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Descriptive label for the setting (e.g. 'family', 'colleagues'). Null if not known."
+              },
+              "called_by": {
+                "type": "array",
+                "description": "GUIDs of Person records who use this nickname. Minimum one entry.",
+                "items": {
+                  "type": "string",
+                  "format": "guid"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "value",
+              "called_by"
+            ]
+          }
+        },
+        "display": {
+          "type": "string",
+          "description": "Full formatted display name"
+        },
+        "transliterations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "script": {
+                "type": "string",
+                "description": "e.g. Arabic, Hebrew, Cyrillic, Kanji"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "given",
+        "family"
+      ]
+    },
+    "birth": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time": {
+          "type": "string",
+          "format": "time"
+        },
+        "place": {
+          "type": "object",
+          "description": "Where the person was born",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "e.g. hospital, home, clinic, unknown"
+            },
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          }
+        },
+        "registration_number": {
+          "type": "string"
+        },
+        "is_estimated": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    },
+    "death": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time": {
+          "type": "string",
+          "format": "time"
+        },
+        "place_of_death": {
+          "$ref": "#/$defs/Address"
+        },
+        "cause": {
+          "type": "string"
+        },
+        "manner": {
+          "type": "string",
+          "enum": [
+            "natural",
+            "accident",
+            "homicide",
+            "suicide",
+            "undetermined",
+            "unknown"
+          ]
+        },
+        "buried_at": {
+          "$ref": "#/$defs/Address"
+        }
+      }
+    },
+    "biological": {
+      "type": "object",
+      "description": "Biological and physical characteristics",
+      "properties": {
+        "sex_at_birth": {
+          "type": "string",
+          "enum": [
+            "male",
+            "female",
+            "intersex",
+            "unknown"
+          ]
+        },
+        "gender_identity": {
+          "type": "string"
+        },
+        "pronouns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blood": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "AB",
+                "O",
+                "unknown"
+              ]
+            },
+            "rh_factor": {
+              "type": "string",
+              "enum": [
+                "+",
+                "-",
+                "unknown"
+              ]
+            },
+            "display": {
+              "type": "string"
+            }
+          }
+        },
+        "appearance": {
+          "type": "object",
+          "properties": {
+            "height_cm": {
+              "type": "number"
+            },
+            "weight_kg": {
+              "type": "number"
+            },
+            "eye_color": {
+              "type": "string"
+            },
+            "hair_color": {
+              "type": "string"
+            },
+            "hair_texture": {
+              "type": "string"
+            },
+            "skin_tone": {
+              "type": "string"
+            },
+            "build": {
+              "type": "string"
+            },
+            "distinguishing_marks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "tattoo",
+                      "scar",
+                      "birthmark",
+                      "piercing",
+                      "mole",
+                      "other"
+                    ]
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "genetics": {
+          "type": "object",
+          "properties": {
+            "dna_profile_id": {
+              "type": "string"
+            },
+            "haplogroup_paternal": {
+              "type": "string"
+            },
+            "haplogroup_maternal": {
+              "type": "string"
+            },
+            "known_variants": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ancestry_composition": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "region": {
+                    "type": "string"
+                  },
+                  "percentage": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                }
+              }
+            }
+          }
+        },
+        "anatomy": {
+          "type": "object",
+          "properties": {
+            "dominant_hand": {
+              "type": "string",
+              "enum": [
+                "right",
+                "left",
+                "ambidextrous"
+              ]
+            },
+            "organ_donor": {
+              "type": "boolean"
+            },
+            "disabilities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "prosthetics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "health": {
+          "type": "object",
+          "properties": {
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "icd_code": {
+                    "type": "string"
+                  },
+                  "diagnosed": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "active",
+                      "resolved",
+                      "chronic",
+                      "in_remission"
+                    ]
+                  }
+                }
+              }
+            },
+            "allergies": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "vaccinations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "booster": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "description": "Official government-issued identity documents",
+      "properties": {
+        "nationalities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "acquired_by": {
+                "type": "string",
+                "enum": [
+                  "birth",
+                  "descent",
+                  "naturalization",
+                  "marriage",
+                  "registration"
+                ]
+              },
+              "since": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "national_id": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "issued": {
+                "type": "string",
+                "format": "date"
+              },
+              "expires": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          }
+        },
+        "passport": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "issued": {
+                "type": "string",
+                "format": "date"
+              },
+              "expires": {
+                "type": "string",
+                "format": "date"
+              },
+              "issued_at": {
+                "type": "string"
+              },
+              "mrz": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "drivers_license": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "state_region": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "class": {
+                "type": "string"
+              },
+              "issued": {
+                "type": "string",
+                "format": "date"
+              },
+              "expires": {
+                "type": "string",
+                "format": "date"
+              },
+              "restrictions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tax_ids": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "biometrics": {
+          "type": "object",
+          "properties": {
+            "fingerprints_on_file": {
+              "type": "boolean"
+            },
+            "facial_recognition_id": {
+              "type": "string"
+            },
+            "iris_scan_id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "origin": {
+      "type": "object",
+      "properties": {
+        "ethnicity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tribal_clan": {
+          "type": "string"
+        },
+        "ancestral_homeland": {
+          "type": "string"
+        },
+        "religion": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "denomination": {
+              "type": "string"
+            },
+            "observance": {
+              "type": "string",
+              "enum": [
+                "secular",
+                "cultural",
+                "practicing",
+                "devout",
+                "none",
+                "unknown"
+              ]
+            },
+            "converted": {
+              "type": "boolean"
+            }
+          }
+        },
+        "caste_social_class": {
+          "type": "string"
+        }
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "bcp47_code": {
+            "type": "string"
+          },
+          "proficiency": {
+            "type": "string",
+            "enum": [
+              "native",
+              "fluent",
+              "advanced",
+              "intermediate",
+              "basic",
+              "learning"
+            ]
+          },
+          "skills": {
+            "type": "object",
+            "properties": {
+              "speaking": {
+                "type": "string",
+                "enum": [
+                  "native",
+                  "fluent",
+                  "advanced",
+                  "intermediate",
+                  "basic"
+                ]
+              },
+              "reading": {
+                "type": "string",
+                "enum": [
+                  "native",
+                  "fluent",
+                  "advanced",
+                  "intermediate",
+                  "basic"
+                ]
+              },
+              "writing": {
+                "type": "string",
+                "enum": [
+                  "native",
+                  "fluent",
+                  "advanced",
+                  "intermediate",
+                  "basic"
+                ]
+              },
+              "listening": {
+                "type": "string",
+                "enum": [
+                  "native",
+                  "fluent",
+                  "advanced",
+                  "intermediate",
+                  "basic"
+                ]
+              }
+            }
+          },
+          "is_native": {
+            "type": "boolean"
+          },
+          "script": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "proficiency"
+        ]
+      }
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string",
+                "format": "email"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "personal",
+                  "work",
+                  "other"
+                ]
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "primary": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "phone": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "string"
+              },
+              "e164": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "mobile",
+                  "home",
+                  "work",
+                  "fax",
+                  "other"
+                ]
+              },
+              "primary": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "A residence or mailing address with period metadata",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "home",
+                  "work",
+                  "mailing",
+                  "previous",
+                  "other"
+                ]
+              },
+              "address": {
+                "$ref": "#/$defs/Address"
+              },
+              "from": {
+                "type": "string",
+                "format": "date"
+              },
+              "to": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "is_current": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "social_media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "platform": {
+                "type": "string"
+              },
+              "handle": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "verified": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "secondary",
+              "vocational",
+              "undergraduate",
+              "graduate",
+              "doctorate",
+              "postdoc",
+              "other"
+            ]
+          },
+          "field": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date"
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "graduated": {
+            "type": "boolean"
+          },
+          "gpa": {
+            "type": "number"
+          },
+          "honors": {
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/$defs/Address"
+          }
+        }
+      }
+    },
+    "career": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "employer": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "industry": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date"
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "is_current": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/$defs/Address"
+          }
+        }
+      }
+    },
+    "affiliations": {
+      "type": "array",
+      "description": "Memberships, roles, and participation in organisations that are not paid employment. Covers clubs, professional bodies, volunteering, political parties, religious organisations, alumni networks, unions, and more.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "organisation": {
+            "type": "string",
+            "description": "Name of the organisation or group"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "professional_body",
+              "club",
+              "volunteering",
+              "political",
+              "religious",
+              "community",
+              "alumni",
+              "union",
+              "ngo",
+              "sports",
+              "arts",
+              "academic",
+              "fraternal",
+              "other"
+            ],
+            "description": "Category of affiliation"
+          },
+          "role": {
+            "type": "string",
+            "description": "The person's role or membership tier — e.g. 'member', 'board member', 'volunteer', 'chairperson', 'founding member'"
+          },
+          "since": {
+            "type": "string",
+            "format": "date"
+          },
+          "until": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "null = currently active"
+          },
+          "is_current": {
+            "type": "boolean"
+          },
+          "location": {
+            "$ref": "#/$defs/Address"
+          },
+          "description": {
+            "type": "string",
+            "description": "What the person does or did within this affiliation"
+          }
+        },
+        "required": [
+          "organisation",
+          "type",
+          "role"
+        ]
+      }
+    },
+    "family": {
+      "type": "object",
+      "description": "Romantic partners and family tree. All people referenced by GUID.",
+      "properties": {
+        "partner": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "person_id": {
+              "type": "string",
+              "format": "guid"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "married",
+                "domestic_partner",
+                "engaged",
+                "dating",
+                "separated",
+                "divorced",
+                "widowed"
+              ]
+            },
+            "since": {
+              "type": "string",
+              "format": "date"
+            },
+            "until": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "marriage_certificate_id": {
+              "type": "string"
+            }
+          }
+        },
+        "past_partners": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "person_id": {
+                "type": "string",
+                "format": "guid"
+              },
+              "type": {
+                "type": "string"
+              },
+              "since": {
+                "type": "string",
+                "format": "date"
+              },
+              "until": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "tree": {
+          "type": "object",
+          "description": "Structured family relationships up to 3rd degree, plus extended",
+          "properties": {
+            "parents": {
+              "description": "1st degree — biological, adoptive, or step parents. Maximum 2.",
+              "type": "array",
+              "maxItems": 2,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "biological_mother",
+                      "biological_father",
+                      "adoptive_mother",
+                      "adoptive_father",
+                      "step_mother",
+                      "step_father",
+                      "surrogate",
+                      "guardian"
+                    ]
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation"
+                ]
+              }
+            },
+            "grandparents": {
+              "description": "2nd degree — parents' parents. Maximum 4.",
+              "type": "array",
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "grandmother",
+                      "grandfather"
+                    ]
+                  },
+                  "side": {
+                    "type": "string",
+                    "enum": [
+                      "maternal",
+                      "paternal"
+                    ]
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "side"
+                ]
+              }
+            },
+            "great_grandparents": {
+              "description": "3rd degree — grandparents' parents. Maximum 8.",
+              "type": "array",
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "great_grandmother",
+                      "great_grandfather"
+                    ]
+                  },
+                  "line": {
+                    "type": "string",
+                    "enum": [
+                      "maternal_maternal",
+                      "maternal_paternal",
+                      "paternal_maternal",
+                      "paternal_paternal"
+                    ],
+                    "description": "Which grandparent line they descend from"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "line"
+                ]
+              }
+            },
+            "siblings": {
+              "description": "1st degree — brothers and sisters of any kind.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "full_sibling",
+                      "half_sibling",
+                      "step_sibling",
+                      "adoptive_sibling",
+                      "twin"
+                    ]
+                  },
+                  "birth_order": {
+                    "type": "integer",
+                    "description": "Position among all siblings, 1-indexed"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation"
+                ]
+              }
+            },
+            "children": {
+              "description": "1st degree — direct children.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "biological",
+                      "adopted",
+                      "step",
+                      "foster",
+                      "surrogate"
+                    ]
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation"
+                ]
+              }
+            },
+            "grandchildren": {
+              "description": "2nd degree — children's children.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "biological",
+                      "adopted",
+                      "step",
+                      "foster"
+                    ]
+                  },
+                  "through_child": {
+                    "type": "string",
+                    "format": "guid",
+                    "description": "GUID of the child (1st degree) through whom this grandchild is connected"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "through_child"
+                ]
+              }
+            },
+            "great_grandchildren": {
+              "description": "3rd degree — grandchildren's children.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "biological",
+                      "adopted",
+                      "step",
+                      "foster"
+                    ]
+                  },
+                  "through_grandchild": {
+                    "type": "string",
+                    "format": "guid",
+                    "description": "GUID of the grandchild (2nd degree) through whom this great-grandchild is connected"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "through_grandchild"
+                ]
+              }
+            },
+            "aunts_uncles": {
+              "description": "2nd degree — parents' siblings.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "aunt",
+                      "uncle"
+                    ]
+                  },
+                  "side": {
+                    "type": "string",
+                    "enum": [
+                      "maternal",
+                      "paternal"
+                    ]
+                  },
+                  "through_parent": {
+                    "type": "string",
+                    "format": "guid",
+                    "description": "GUID of the parent who is their sibling"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "side"
+                ]
+              }
+            },
+            "nephews_nieces": {
+              "description": "2nd degree — siblings' children.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "nephew",
+                      "niece"
+                    ]
+                  },
+                  "through_sibling": {
+                    "type": "string",
+                    "format": "guid",
+                    "description": "GUID of the sibling who is their parent"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation",
+                  "through_sibling"
+                ]
+              }
+            },
+            "cousins": {
+              "description": "3rd degree — aunts'/uncles' children (first cousins).",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "degree": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "1 = first cousin, 2 = second cousin, etc."
+                  },
+                  "removed": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Number of generations removed (0 = same generation)"
+                  },
+                  "side": {
+                    "type": "string",
+                    "enum": [
+                      "maternal",
+                      "paternal"
+                    ]
+                  },
+                  "through_aunt_uncle": {
+                    "type": "string",
+                    "format": "guid",
+                    "description": "GUID of the aunt/uncle through whom this cousin is connected"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "degree",
+                  "removed",
+                  "side"
+                ]
+              }
+            },
+            "extended": {
+              "description": "Any family relationship not covered by the above (e.g. great-aunts, great-uncles, second cousins, in-laws, godparents, chosen family).",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "string",
+                    "format": "guid"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "description": "Free-text description of the relationship"
+                  }
+                },
+                "required": [
+                  "person_id",
+                  "relation"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "description": "The person's social graph — non-family, non-romantic connections. Captures who they know, the nature of the relationship, subjective attitude toward them, and interaction patterns.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "format": "guid",
+            "description": "GUID of the connected Person record"
+          },
+          "given_nickname": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The informal name this person uses when addressing this connection — e.g. 'Joshy', 'Tali'. Complements the nickname entry in the connected Person's name.nickname array, where called_by includes this person's GUID."
+          },
+          "role": {
+            "type": "string",
+            "description": "Free-text description of the nature of this connection — e.g. 'close friend', 'coworker', 'PhD advisor', 'running buddy', 'childhood neighbor'"
+          },
+          "context": {
+            "type": "object",
+            "description": "How and where this connection was formed",
+            "properties": {
+              "group": {
+                "type": "string",
+                "description": "Social grouping — e.g. 'Work', 'School', 'Neighborhood', 'Online'"
+              },
+              "how_met": {
+                "type": "string",
+                "enum": [
+                  "job",
+                  "school",
+                  "mutual_friend",
+                  "online",
+                  "event",
+                  "neighborhood",
+                  "family",
+                  "travel",
+                  "app",
+                  "other"
+                ],
+                "description": "Circumstance of first meeting"
+              },
+              "where": {
+                "$ref": "#/$defs/Address",
+                "description": "Address of the place or organisation where they met"
+              },
+              "since": {
+                "type": "string",
+                "format": "date",
+                "description": "Approximate date the connection was established"
+              }
+            }
+          },
+          "attitude": {
+            "type": "object",
+            "description": "The person's subjective attitude toward this connection. Optional but recommended — omit only when there is genuinely no assessment to record.",
+            "properties": {
+              "as_of": {
+                "type": "string",
+                "format": "date",
+                "description": "Date this assessment was last updated"
+              },
+              "valence": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "neutral",
+                  "negative",
+                  "mixed",
+                  "unknown"
+                ],
+                "description": "Overall emotional tone of the relationship"
+              },
+              "score": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1,
+                "description": "Numeric sentiment score. -1.0 = strongly negative, 0 = neutral, +1.0 = strongly positive"
+              },
+              "dimensions": {
+                "type": "object",
+                "description": "Granular attitude dimensions, each scored 0.0–1.0",
+                "properties": {
+                  "trust": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "respect": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "closeness": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "influence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "How much this person influences the subject's decisions or worldview"
+                  }
+                }
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Free-form descriptive tags — e.g. 'reliable', 'inspiring', 'draining'"
+              },
+              "notes": {
+                "type": "string",
+                "description": "Free-text notes about the relationship quality or history"
+              }
+            }
+          },
+          "interaction": {
+            "type": "object",
+            "description": "How and how often the person interacts with this connection",
+            "properties": {
+              "last_contact": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Datetime of most recent contact"
+              },
+              "frequency": {
+                "type": "string",
+                "enum": [
+                  "daily",
+                  "several_times_a_week",
+                  "weekly",
+                  "biweekly",
+                  "monthly",
+                  "rarely",
+                  "dormant"
+                ],
+                "description": "Approximate contact frequency"
+              },
+              "channels": {
+                "type": "array",
+                "description": "Communication channels used with this person",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "in_person",
+                    "phone",
+                    "video_call",
+                    "whatsapp",
+                    "sms",
+                    "email",
+                    "social_media",
+                    "letter",
+                    "other"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "person_id",
+          "role"
+        ]
+      }
+    },
+    "residency": {
+      "type": "array",
+      "description": "Full history of places the person has lived. If end_date is null, the person currently lives there.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "$ref": "#/$defs/Address"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the person moved in"
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Date the person moved out. null = currently living here"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "owned",
+              "rented",
+              "family_home",
+              "dormitory",
+              "temporary",
+              "other"
+            ],
+            "description": "Housing arrangement"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional context — e.g. reason for move, living situation"
+          }
+        },
+        "required": [
+          "address",
+          "start_date"
+        ]
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "Skills, competencies, and knowledge — including tools, software, hardware, professional techniques, and soft skills.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Skill or tool name — e.g. 'Python', 'fMRI analysis', 'public speaking', 'Figma', 'surgical suturing'"
+          },
+          "category": {
+            "type": "string",
+            "description": "Broad category of the skill — e.g. 'programming', 'data_analysis', 'software', 'hardware', 'lab_technique', 'creative', 'communication', 'management', 'research', 'physical', 'craft'"
+          },
+          "proficiency": {
+            "type": "string",
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced",
+              "expert"
+            ],
+            "description": "Self-assessed or formally assessed proficiency level"
+          },
+          "used_since": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the person first started using or learning this skill"
+          },
+          "last_used": {
+            "type": "string",
+            "format": "date",
+            "description": "Most recent date the skill was actively used"
+          },
+          "certifications": {
+            "type": "array",
+            "description": "Formal certifications or credentials for this skill",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "issuer": {
+                  "type": "string"
+                },
+                "issued_at": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "expires": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                },
+                "credential_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "issuer",
+                "issued_at"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "category",
+          "proficiency"
+        ]
+      }
+    },
+    "personality": {
+      "type": "object",
+      "properties": {
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mbti": {
+          "type": "string"
+        },
+        "big_five": {
+          "type": "object",
+          "properties": {
+            "openness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "conscientiousness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "extraversion": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "agreeableness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "neuroticism": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "enneagram": {
+          "type": "string"
+        },
+        "zodiac": {
+          "type": "object",
+          "properties": {
+            "western": {
+              "type": "string"
+            },
+            "chinese": {
+              "type": "string"
+            }
+          }
+        },
+        "interests_hobbies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "phobias": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "quirks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "biography": {
+      "type": "object",
+      "properties": {
+        "narrative": {
+          "type": "string",
+          "description": "Free-text narrative summary of the person's life"
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "personal",
+                  "education",
+                  "career",
+                  "travel",
+                  "health",
+                  "family",
+                  "legal",
+                  "military",
+                  "other"
+                ]
+              },
+              "location": {
+                "$ref": "#/$defs/Address"
+              }
+            },
+            "required": [
+              "date",
+              "title"
+            ]
+          }
+        },
+        "military_service": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "branch": {
+              "type": "string"
+            },
+            "rank": {
+              "type": "string"
+            },
+            "service_number": {
+              "type": "string"
+            },
+            "from": {
+              "type": "string",
+              "format": "date"
+            },
+            "to": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            },
+            "conflicts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "decorations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "discharge_type": {
+              "type": "string"
+            }
+          }
+        },
+        "criminal_record": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "has_record": {
+              "type": "boolean"
+            },
+            "offenses": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "charge": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "jurisdiction": {
+                    "type": "string"
+                  },
+                  "outcome": {
+                    "type": "string"
+                  },
+                  "expunged": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "immigration": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from_country": {
+                "type": "string"
+              },
+              "to_country": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "visa_type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "citizen",
+                  "permanent_resident",
+                  "temporary_resident",
+                  "visa",
+                  "refugee",
+                  "asylum_seeker",
+                  "undocumented"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "financial": {
+      "type": "object",
+      "properties": {
+        "credit_score": {
+          "type": "integer",
+          "description": "Numeric credit score"
+        },
+        "bank_accounts": {
+          "type": "array",
+          "description": "Bank accounts held by the person.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "bank": {
+                "type": "string"
+              },
+              "account_type": {
+                "type": "string",
+                "description": "e.g. checking, savings, investment"
+              },
+              "country": {
+                "type": "string",
+                "description": "ISO 3166-1 alpha-2 country code — e.g. IL, US, GB"
+              },
+              "iban": {
+                "type": "string",
+                "description": "IBAN — required, must not be null"
+              },
+              "balance": {
+                "$ref": "#/$defs/Money",
+                "description": "Current balance — optional"
+              }
+            },
+            "required": [
+              "bank",
+              "iban",
+              "country"
+            ]
+          }
+        },
+        "cash": {
+          "type": "array",
+          "description": "Physical cash held by the person, with a description of where it is kept.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "$ref": "#/$defs/Money"
+              },
+              "where": {
+                "type": "string",
+                "description": "Free-text location description — e.g. 'personal wallet', 'hidden in the blue shirt inside the bedroom closet'"
+              }
+            },
+            "required": [
+              "amount",
+              "where"
+            ]
+          }
+        },
+        "loans": {
+          "type": "array",
+          "description": "Money the person owes to a bank or institution.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lender": {
+                "type": "string",
+                "description": "Name of the bank or lending institution"
+              },
+              "principal": {
+                "$ref": "#/$defs/Money",
+                "description": "Original loan amount"
+              },
+              "remaining": {
+                "$ref": "#/$defs/Money",
+                "description": "Outstanding balance"
+              },
+              "interest_rate": {
+                "type": "number",
+                "description": "Annual interest rate as a percentage (e.g. 4.5 for 4.5%)"
+              },
+              "opened": {
+                "type": "string",
+                "format": "date"
+              },
+              "due": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date",
+                "description": "Final repayment date"
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "lender",
+              "principal"
+            ]
+          }
+        },
+        "debts": {
+          "type": "array",
+          "description": "Informal money owed to a person or non-institutional entity.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "to": {
+                "type": "string",
+                "description": "Name or description of who is owed"
+              },
+              "to_person_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "guid",
+                "description": "GUID of the Person record if the creditor is in the dataset"
+              },
+              "amount": {
+                "$ref": "#/$defs/Money"
+              },
+              "since": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "to",
+              "amount"
+            ]
+          }
+        },
+        "deposits": {
+          "type": "array",
+          "description": "Money the person has deposited or placed in a financial instrument.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "institution": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "description": "e.g. fixed_deposit, savings_plan, pension, investment_account, crypto_wallet"
+              },
+              "amount": {
+                "$ref": "#/$defs/Money",
+                "description": "Deposited or current value"
+              },
+              "opened": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "matures": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date",
+                "description": "Maturity or expected withdrawal date, if applicable"
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "institution",
+              "amount"
+            ]
+          }
+        }
+      }
+    },
+    "digital": {
+      "type": "object",
+      "properties": {
+        "usernames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "websites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "pgp_key_fingerprint": {
+          "type": "string"
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "category": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pets": {
+      "type": "array",
+      "description": "Animals the person owns or cares for.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string",
+            "description": "e.g. 'cat', 'dog', 'rabbit', 'parrot'"
+          },
+          "breed": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "since": {
+            "type": "string",
+            "format": "date",
+            "description": "When the person got this pet"
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Last date the person had this pet. null = still with them. Equals passed_on if the pet died while with the person. Set without passed_on if the pet was rehomed or given away."
+          },
+          "passed_on": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Date the pet died. null if rehomed or still alive."
+          }
+        },
+        "required": [
+          "name",
+          "species"
+        ]
+      }
+    },
+    "ownership": {
+      "type": "array",
+      "description": "Physical and non-physical assets the person owns or co-owns. Devices formerly in digital.known_devices now live here.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Human-readable name for this asset — e.g. 'MacBook Pro 2016', 'Apartment on Rothschild Blvd', 'Toyota Corolla 2021'"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "real_estate",
+              "vehicle",
+              "device",
+              "furniture",
+              "jewelry",
+              "art",
+              "collectible",
+              "intellectual_property",
+              "business_stake",
+              "financial_instrument",
+              "other"
+            ],
+            "description": "Asset category"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Free-text details — make, model, condition, year, serial number, etc."
+          },
+          "acquired_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Date of purchase, inheritance, gift, or other acquisition"
+          },
+          "acquisition_method": {
+            "type": "string",
+            "enum": [
+              "purchased",
+              "inherited",
+              "gifted",
+              "built",
+              "leased_to_own",
+              "other"
+            ],
+            "description": "How the person came to own this asset"
+          },
+          "ownership_share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Fraction of ownership. 1.0 = fully owned, 0.5 = co-owned equally. Omit if sole owner."
+          },
+          "co_owners": {
+            "type": "array",
+            "description": "GUIDs of other Person records who co-own this asset",
+            "items": {
+              "type": "string",
+              "format": "guid"
+            }
+          },
+          "address": {
+            "$ref": "#/$defs/Address",
+            "description": "Physical location — used for real_estate, vehicles (stored at), etc."
+          },
+          "identifier": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Serial number, VIN, registration plate, title number, ISBN, patent number, etc."
+          },
+          "still_owned": {
+            "type": "boolean",
+            "description": "false if the person no longer owns this asset"
+          },
+          "disposed_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "Date sold, gifted, lost, or otherwise disposed of"
+          },
+          "estimated_value": {
+            "type": "object",
+            "description": "Optional valuation — present but not required",
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code"
+              },
+              "as_of": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "amount",
+              "currency",
+              "as_of"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "category"
+        ]
+      }
+    },
+    "custom": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "birth"
+  ]
+}

@@ -1,0 +1,1774 @@
+{
+  "id": "a3f4c2d1-58b7-4e9a-bc12-7d3e8f901234",
+  "meta": {
+    "created_at": "2024-01-15T09:00:00Z",
+    "updated_at": "2025-03-01T14:22:00Z",
+    "version": 4,
+    "source": "civil_registry",
+    "tags": [
+      "example",
+      "demo"
+    ]
+  },
+  "name": {
+    "prefix": "Dr.",
+    "given": "Miriam",
+    "middle": [
+      "Rachel"
+    ],
+    "family": "Cohen",
+    "suffix": "PhD",
+    "maiden": "Levi",
+    "preferred": "Miri",
+    "nickname": [
+      {
+        "value": "Miri",
+        "context": "family",
+        "called_by": [
+          "e0f4d7h5-24g6-7i5d-bh89-7d5e0f6g1234",
+          "d9e3c6g4-13f5-6h4c-ag78-6c4d9e5f0123"
+        ]
+      },
+      {
+        "value": "Rachi",
+        "context": null,
+        "called_by": [
+          "b7c1a4e2-91d3-4f2a-8e56-4a2b7c3d8901"
+        ]
+      },
+      {
+        "value": "Prof M",
+        "context": "colleagues",
+        "called_by": [
+          "f1g5e8i6-35h7-8j6e-ci90-8e6f1g7h2345",
+          "g2h6f9j7-46i8-9k7f-dj01-9f7g2h8i3456"
+        ]
+      },
+      {
+        "value": "Mimi",
+        "context": "childhood friends",
+        "called_by": [
+          "l7m1k4o2-91n3-4p2k-io56-4k2l7m3n8901"
+        ]
+      }
+    ],
+    "display": "Dr. Miriam Rachel Cohen PhD",
+    "transliterations": [
+      {
+        "script": "Hebrew",
+        "value": "מרים רחל כהן"
+      }
+    ]
+  },
+  "birth": {
+    "date": "1985-06-14",
+    "time": "07:42:00",
+    "place": {
+      "type": "hospital",
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0853,
+          "lng": 34.7818
+        },
+        "ZIP_code": "6423906",
+        "addition": "Ichilov Hospital"
+      }
+    },
+    "registration_number": "IL-1985-TLV-088421",
+    "is_estimated": false
+  },
+  "death": null,
+  "biological": {
+    "sex_at_birth": "female",
+    "gender_identity": "woman",
+    "pronouns": [
+      "she/her"
+    ],
+    "blood": {
+      "type": "A",
+      "rh_factor": "+",
+      "display": "A+"
+    },
+    "appearance": {
+      "height_cm": 167,
+      "weight_kg": 62,
+      "eye_color": "brown",
+      "hair_color": "dark brown",
+      "hair_texture": "wavy",
+      "skin_tone": "olive",
+      "build": "athletic",
+      "distinguishing_marks": [
+        {
+          "type": "birthmark",
+          "location": "left shoulder",
+          "description": "small oval birthmark"
+        },
+        {
+          "type": "tattoo",
+          "location": "right wrist",
+          "description": "small olive branch"
+        }
+      ]
+    },
+    "genetics": {
+      "dna_profile_id": "DNA-2019-IL-44821",
+      "haplogroup_paternal": "J2a",
+      "haplogroup_maternal": "K1a",
+      "known_variants": [
+        "MTHFR C677T"
+      ],
+      "ancestry_composition": [
+        {
+          "region": "Levantine",
+          "percentage": 62
+        },
+        {
+          "region": "Ashkenazi Jewish",
+          "percentage": 28
+        },
+        {
+          "region": "Southern European",
+          "percentage": 10
+        }
+      ]
+    },
+    "anatomy": {
+      "dominant_hand": "right",
+      "organ_donor": true,
+      "disabilities": [],
+      "prosthetics": []
+    },
+    "health": {
+      "conditions": [
+        {
+          "name": "Mild Asthma",
+          "icd_code": "J45.20",
+          "diagnosed": "1998-03-10",
+          "status": "chronic"
+        }
+      ],
+      "allergies": [
+        "penicillin",
+        "shellfish"
+      ],
+      "vaccinations": [
+        {
+          "name": "COVID-19 (Pfizer)",
+          "date": "2021-02-20",
+          "booster": false
+        },
+        {
+          "name": "COVID-19 Booster",
+          "date": "2021-10-05",
+          "booster": true
+        },
+        {
+          "name": "MMR",
+          "date": "1987-06-01",
+          "booster": false
+        },
+        {
+          "name": "Influenza",
+          "date": "2024-11-01",
+          "booster": false
+        }
+      ]
+    }
+  },
+  "identity": {
+    "nationalities": [
+      {
+        "country": "Israel",
+        "country_code": "IL",
+        "acquired_by": "birth",
+        "since": "1985-06-14"
+      },
+      {
+        "country": "United States",
+        "country_code": "US",
+        "acquired_by": "descent",
+        "since": "1985-07-01"
+      }
+    ],
+    "national_id": [
+      {
+        "country": "Israel",
+        "type": "Teudat Zehut",
+        "number": "123456782",
+        "issued": "2003-06-14",
+        "expires": null
+      }
+    ],
+    "passport": [
+      {
+        "country": "Israel",
+        "number": "20XXXXXXX",
+        "issued": "2022-01-10",
+        "expires": "2032-01-09",
+        "issued_at": "Ministry of Interior, Tel Aviv"
+      },
+      {
+        "country": "United States",
+        "number": "5XXXXXXXX",
+        "issued": "2019-05-22",
+        "expires": "2029-05-21",
+        "issued_at": "US Embassy, Tel Aviv"
+      }
+    ],
+    "drivers_license": [
+      {
+        "country": "Israel",
+        "state_region": null,
+        "number": "IL-DL-7884210",
+        "class": "B",
+        "issued": "2005-08-01",
+        "expires": "2030-08-01",
+        "restrictions": []
+      }
+    ],
+    "tax_ids": [
+      {
+        "country": "Israel",
+        "type": "TIN",
+        "number": "123456782"
+      },
+      {
+        "country": "United States",
+        "type": "SSN",
+        "number": "XXX-XX-XXXX"
+      }
+    ],
+    "biometrics": {
+      "fingerprints_on_file": true,
+      "facial_recognition_id": "FR-IL-20220110-44821",
+      "iris_scan_id": null
+    }
+  },
+  "origin": {
+    "ethnicity": [
+      "Mizrahi Jewish",
+      "Ashkenazi Jewish"
+    ],
+    "tribal_clan": "Tribe of Levi (traditional)",
+    "ancestral_homeland": "Levant / Eastern Europe",
+    "religion": {
+      "primary": "Judaism",
+      "denomination": "Conservative",
+      "observance": "practicing",
+      "converted": false
+    },
+    "caste_social_class": null
+  },
+  "languages": [
+    {
+      "language": "Hebrew",
+      "bcp47_code": "he-IL",
+      "proficiency": "native",
+      "skills": {
+        "speaking": "native",
+        "reading": "native",
+        "writing": "native",
+        "listening": "native"
+      },
+      "is_native": true,
+      "script": "Hebrew"
+    },
+    {
+      "language": "English",
+      "bcp47_code": "en-US",
+      "proficiency": "fluent",
+      "skills": {
+        "speaking": "fluent",
+        "reading": "native",
+        "writing": "fluent",
+        "listening": "native"
+      },
+      "is_native": false,
+      "script": "Latin"
+    },
+    {
+      "language": "French",
+      "bcp47_code": "fr-FR",
+      "proficiency": "intermediate",
+      "skills": {
+        "speaking": "intermediate",
+        "reading": "advanced",
+        "writing": "intermediate",
+        "listening": "intermediate"
+      },
+      "is_native": false,
+      "script": "Latin"
+    },
+    {
+      "language": "Arabic",
+      "bcp47_code": "ar-IL",
+      "proficiency": "basic",
+      "skills": {
+        "speaking": "basic",
+        "reading": "basic",
+        "writing": "basic",
+        "listening": "intermediate"
+      },
+      "is_native": false,
+      "script": "Arabic"
+    }
+  ],
+  "contact": {
+    "email": [
+      {
+        "address": "miriam.cohen@example.com",
+        "type": "personal",
+        "verified": true,
+        "primary": true
+      },
+      {
+        "address": "m.cohen@university.ac.il",
+        "type": "work",
+        "verified": true,
+        "primary": false
+      }
+    ],
+    "phone": [
+      {
+        "number": "050-123-4567",
+        "e164": "+972501234567",
+        "type": "mobile",
+        "primary": true
+      },
+      {
+        "number": "03-765-4321",
+        "e164": "+97237654321",
+        "type": "home",
+        "primary": false
+      }
+    ],
+    "addresses": [
+      {
+        "type": "home",
+        "address": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0635,
+            "lng": 34.7743
+          },
+          "ZIP_code": "6688101",
+          "addition": "12 Rothschild Blvd, Apt 4B"
+        },
+        "from": "2018-09-01",
+        "to": null,
+        "is_current": true
+      },
+      {
+        "type": {
+          "value": "other",
+          "description": "Seasonal holiday home"
+        },
+        "address": {
+          "city": "Eilat",
+          "region": "Southern District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 29.5577,
+            "lng": 34.9519
+          },
+          "ZIP_code": "8855301",
+          "addition": null
+        },
+        "from": "2020-06-01",
+        "to": null,
+        "is_current": true
+      }
+    ],
+    "social_media": [
+      {
+        "platform": "LinkedIn",
+        "handle": "miriamcohen",
+        "url": "https://linkedin.com/in/miriamcohen",
+        "verified": false
+      },
+      {
+        "platform": "Twitter/X",
+        "handle": "@miri_cohen",
+        "url": "https://x.com/miri_cohen",
+        "verified": false
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Hebrew University of Jerusalem",
+      "type": "undergraduate",
+      "field": "Computer Science",
+      "degree": "B.Sc.",
+      "start": "2003-10-01",
+      "end": "2007-06-30",
+      "graduated": true,
+      "gpa": 3.8,
+      "honors": "Magna Cum Laude",
+      "location": {
+        "city": "Jerusalem",
+        "region": "Jerusalem District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 31.7767,
+          "lng": 35.2345
+        },
+        "ZIP_code": "9190401",
+        "addition": "Hebrew University of Jerusalem, Mount Scopus"
+      }
+    },
+    {
+      "institution": "MIT",
+      "type": "doctorate",
+      "field": "Cognitive Science & AI",
+      "degree": "PhD",
+      "start": "2009-09-01",
+      "end": "2014-05-31",
+      "graduated": true,
+      "gpa": 4.0,
+      "honors": null,
+      "location": {
+        "city": "Cambridge",
+        "region": "Massachusetts",
+        "country": "United States",
+        "country_code": "US",
+        "coordinates": {
+          "lat": 42.3601,
+          "lng": -71.0942
+        },
+        "ZIP_code": "02139",
+        "addition": "Massachusetts Institute of Technology"
+      }
+    }
+  ],
+  "career": [
+    {
+      "employer": "Tel Aviv University",
+      "title": "Associate Professor of Cognitive Science",
+      "industry": "Academia",
+      "start": "2017-10-01",
+      "end": null,
+      "is_current": true,
+      "description": "Research in human-AI interaction and cognitive load theory.",
+      "location": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.1133,
+          "lng": 34.8044
+        },
+        "ZIP_code": "6997801",
+        "addition": "Tel Aviv University, Ramat Aviv"
+      }
+    },
+    {
+      "employer": "Google DeepMind",
+      "title": "Research Scientist",
+      "industry": "Technology",
+      "start": "2014-07-01",
+      "end": "2017-09-30",
+      "is_current": false,
+      "description": "Worked on reinforcement learning and human-computer interaction.",
+      "location": {
+        "city": "London",
+        "region": "England",
+        "country": "United Kingdom",
+        "country_code": "GB",
+        "coordinates": {
+          "lat": 51.5074,
+          "lng": -0.1278
+        },
+        "ZIP_code": "N1C 4AG",
+        "addition": "Google DeepMind, Kings Cross"
+      }
+    }
+  ],
+  "affiliations": [
+    {
+      "organisation": "Association for Computing Machinery (ACM)",
+      "type": "professional_body",
+      "role": "senior member",
+      "since": "2015-01-01",
+      "until": null,
+      "is_current": true,
+      "location": {
+        "city": "New York",
+        "region": "New York",
+        "country": "United States",
+        "country_code": "US",
+        "coordinates": {
+          "lat": 40.7128,
+          "lng": -74.006
+        },
+        "ZIP_code": "10036",
+        "addition": "ACM Global HQ"
+      },
+      "description": "Active member of the ACM SIGCHI (Special Interest Group on Computer-Human Interaction)."
+    },
+    {
+      "organisation": "Hebrew University Alumni Association",
+      "type": "alumni",
+      "role": "member",
+      "since": "2007-07-01",
+      "until": null,
+      "is_current": true,
+      "location": {
+        "city": "Jerusalem",
+        "region": "Jerusalem District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 31.7767,
+          "lng": 35.2345
+        },
+        "ZIP_code": "9190401",
+        "addition": "Hebrew University of Jerusalem"
+      },
+      "description": "Annual donor and occasional guest lecturer."
+    },
+    {
+      "organisation": "Tel Aviv Cycling Club",
+      "type": "sports",
+      "role": "member",
+      "since": "2019-03-01",
+      "until": null,
+      "is_current": true,
+      "location": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0853,
+          "lng": 34.7818
+        },
+        "ZIP_code": "6473421",
+        "addition": null
+      },
+      "description": "Weekend rides along the Yarkon trail."
+    },
+    {
+      "organisation": "Leket Israel",
+      "type": "volunteering",
+      "role": "volunteer",
+      "since": "2020-04-01",
+      "until": "2022-12-01",
+      "is_current": false,
+      "location": {
+        "city": "Lod",
+        "region": "Central District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 31.9516,
+          "lng": 34.8957
+        },
+        "ZIP_code": "7130202",
+        "addition": "Leket Israel Food Bank"
+      },
+      "description": "Volunteered at food rescue operations during and after the COVID-19 pandemic."
+    }
+  ],
+  "family": {
+    "partner": {
+      "person_id": "b7c1a4e2-91d3-4f2a-8e56-4a2b7c3d8901",
+      "type": "married",
+      "since": "2016-07-03",
+      "until": null,
+      "marriage_certificate_id": "IL-MARR-2016-TLV-00421"
+    },
+    "past_partners": [
+      {
+        "person_id": "c8d2b5f3-02e4-5g3b-9f67-5b3c8d4e9012",
+        "type": "dating",
+        "since": "2010-02-14",
+        "until": "2013-11-30"
+      }
+    ],
+    "tree": {
+      "parents": [
+        {
+          "person_id": "d9e3c6g4-13f5-6h4c-ag78-6c4d9e5f0123",
+          "relation": "biological_mother"
+        },
+        {
+          "person_id": "e0f4d7h5-24g6-7i5d-bh89-7d5e0f6g1234",
+          "relation": "biological_father"
+        }
+      ],
+      "grandparents": [
+        {
+          "person_id": "aa11b22c-1111-2222-3333-444455556666",
+          "relation": "grandmother",
+          "side": "maternal"
+        },
+        {
+          "person_id": "bb22c33d-2222-3333-4444-555566667777",
+          "relation": "grandfather",
+          "side": "maternal"
+        },
+        {
+          "person_id": "cc33d44e-3333-4444-5555-666677778888",
+          "relation": "grandmother",
+          "side": "paternal"
+        },
+        {
+          "person_id": "dd44e55f-4444-5555-6666-777788889999",
+          "relation": "grandfather",
+          "side": "paternal"
+        }
+      ],
+      "great_grandparents": [
+        {
+          "person_id": "ee55f66g-5555-6666-7777-88889999aaaa",
+          "relation": "great_grandmother",
+          "line": "maternal_maternal"
+        },
+        {
+          "person_id": "ff66g77h-6666-7777-8888-9999aaaabbbb",
+          "relation": "great_grandfather",
+          "line": "maternal_maternal"
+        },
+        {
+          "person_id": "gg77h88i-7777-8888-9999-aaaabbbbcccc",
+          "relation": "great_grandmother",
+          "line": "maternal_paternal"
+        },
+        {
+          "person_id": "hh88i99j-8888-9999-aaaa-bbbbccccdddd",
+          "relation": "great_grandfather",
+          "line": "maternal_paternal"
+        },
+        {
+          "person_id": "ii99j00k-9999-aaaa-bbbb-ccccddddeee0",
+          "relation": "great_grandmother",
+          "line": "paternal_maternal"
+        },
+        {
+          "person_id": "jj00k11l-aaaa-bbbb-cccc-ddddeeeefff1",
+          "relation": "great_grandfather",
+          "line": "paternal_maternal"
+        },
+        {
+          "person_id": "kk11l22m-bbbb-cccc-dddd-eeeeffff0002",
+          "relation": "great_grandmother",
+          "line": "paternal_paternal"
+        },
+        {
+          "person_id": "ll22m33n-cccc-dddd-eeee-ffff00001113",
+          "relation": "great_grandfather",
+          "line": "paternal_paternal"
+        }
+      ],
+      "siblings": [
+        {
+          "person_id": "f1g5e8i6-35h7-8j6e-ci90-8e6f1g7h2345",
+          "relation": "full_sibling",
+          "birth_order": 1
+        },
+        {
+          "person_id": "g2h6f9j7-46i8-9k7f-dj01-9f7g2h8i3456",
+          "relation": "full_sibling",
+          "birth_order": 3
+        }
+      ],
+      "children": [
+        {
+          "person_id": "h3i7g0k8-57j9-0l8g-ek12-0g8h3i9j4567",
+          "relation": "biological"
+        },
+        {
+          "person_id": "i4j8h1l9-68k0-1m9h-fl23-1h9i4j0k5678",
+          "relation": "biological"
+        }
+      ],
+      "grandchildren": [
+        {
+          "person_id": "mm33n44o-dddd-eeee-ffff-000011112224",
+          "relation": "biological",
+          "through_child": "h3i7g0k8-57j9-0l8g-ek12-0g8h3i9j4567"
+        }
+      ],
+      "great_grandchildren": [
+        {
+          "person_id": "nn44o55p-eeee-ffff-0000-111122223335",
+          "relation": "biological",
+          "through_grandchild": "mm33n44o-dddd-eeee-ffff-000011112224"
+        }
+      ],
+      "aunts_uncles": [
+        {
+          "person_id": "l7m1k4o2-91n3-4p2k-io56-4k2l7m3n8901",
+          "relation": "aunt",
+          "side": "maternal",
+          "through_parent": "d9e3c6g4-13f5-6h4c-ag78-6c4d9e5f0123"
+        },
+        {
+          "person_id": "oo55p66q-ffff-0000-1111-222233334446",
+          "relation": "uncle",
+          "side": "paternal",
+          "through_parent": "e0f4d7h5-24g6-7i5d-bh89-7d5e0f6g1234"
+        }
+      ],
+      "nephews_nieces": [
+        {
+          "person_id": "pp66q77r-0000-1111-2222-333344445557",
+          "relation": "niece",
+          "through_sibling": "f1g5e8i6-35h7-8j6e-ci90-8e6f1g7h2345"
+        },
+        {
+          "person_id": "qq77r88s-1111-2222-3333-444455556668",
+          "relation": "nephew",
+          "through_sibling": "g2h6f9j7-46i8-9k7f-dj01-9f7g2h8i3456"
+        }
+      ],
+      "cousins": [
+        {
+          "person_id": "m8n2l5p3-02o4-5q3l-jp67-5l3m8n4o9012",
+          "degree": 1,
+          "removed": 0,
+          "side": "maternal",
+          "through_aunt_uncle": "l7m1k4o2-91n3-4p2k-io56-4k2l7m3n8901"
+        },
+        {
+          "person_id": "rr88s99t-2222-3333-4444-555566667779",
+          "degree": 1,
+          "removed": 0,
+          "side": "paternal",
+          "through_aunt_uncle": "oo55p66q-ffff-0000-1111-222233334446"
+        }
+      ],
+      "extended": [
+        {
+          "person_id": "ss99t00u-3333-4444-5555-666677778880",
+          "relation": "godmother"
+        },
+        {
+          "person_id": "tt00u11v-4444-5555-6666-777788889991",
+          "relation": "great_aunt"
+        }
+      ]
+    }
+  },
+  "connections": [
+    {
+      "person_id": "9cfb9bd3-9b14-4d79-9d7a-3c3f66de1e12",
+      "role": "coworker",
+      "context": {
+        "group": "Work",
+        "how_met": "job",
+        "where": {
+          "city": "London",
+          "region": "England",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "coordinates": {
+            "lat": 51.5074,
+            "lng": -0.1278
+          },
+          "ZIP_code": "N1C 4AG",
+          "addition": "Google DeepMind, Kings Cross"
+        },
+        "since": "2014-07-01"
+      },
+      "attitude": {
+        "as_of": "2026-03-05",
+        "valence": "positive",
+        "score": 0.65,
+        "dimensions": {
+          "trust": 0.8,
+          "respect": 0.7,
+          "closeness": 0.4,
+          "influence": 0.3
+        },
+        "tags": [
+          "reliable",
+          "fast-responder"
+        ],
+        "notes": "Good collaborator on stressful deadlines."
+      },
+      "interaction": {
+        "last_contact": "2026-02-28T18:30:00Z",
+        "frequency": "monthly",
+        "channels": [
+          "whatsapp",
+          "email"
+        ]
+      }
+    },
+    {
+      "person_id": "a1b2c3d4-1234-5678-9abc-def012345678",
+      "role": "close friend",
+      "context": {
+        "group": "School",
+        "how_met": "school",
+        "where": {
+          "city": "Jerusalem",
+          "region": "Jerusalem District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 31.7767,
+            "lng": 35.2345
+          },
+          "ZIP_code": "9190401",
+          "addition": "Hebrew University of Jerusalem, Mount Scopus"
+        },
+        "since": "2003-10-01"
+      },
+      "attitude": {
+        "as_of": "2026-01-10",
+        "valence": "positive",
+        "score": 0.92,
+        "dimensions": {
+          "trust": 0.95,
+          "respect": 0.9,
+          "closeness": 0.9,
+          "influence": 0.6
+        },
+        "tags": [
+          "supportive",
+          "long-term",
+          "confidant"
+        ],
+        "notes": "Known since undergrad. One of Miriam's closest friends outside of family."
+      },
+      "interaction": {
+        "last_contact": "2026-03-01T12:00:00Z",
+        "frequency": "weekly",
+        "channels": [
+          "in_person",
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "person_id": "f9e8d7c6-9876-5432-1fed-cba987654321",
+      "role": "PhD advisor and long-term academic mentor",
+      "context": {
+        "group": "Academia",
+        "how_met": "school",
+        "where": {
+          "city": "Cambridge",
+          "region": "Massachusetts",
+          "country": "United States",
+          "country_code": "US",
+          "coordinates": {
+            "lat": 42.3601,
+            "lng": -71.0942
+          },
+          "ZIP_code": "02139",
+          "addition": "Massachusetts Institute of Technology"
+        },
+        "since": "2009-09-01"
+      },
+      "attitude": {
+        "as_of": "2025-11-20",
+        "valence": "positive",
+        "score": 0.85,
+        "dimensions": {
+          "trust": 0.9,
+          "respect": 0.95,
+          "closeness": 0.6,
+          "influence": 0.85
+        },
+        "tags": [
+          "influential",
+          "inspiring",
+          "demanding"
+        ],
+        "notes": "Shaped Miriam's entire research philosophy. Still collaborates occasionally."
+      },
+      "interaction": {
+        "last_contact": "2025-11-15T16:00:00Z",
+        "frequency": "rarely",
+        "channels": [
+          "email",
+          "in_person"
+        ]
+      }
+    },
+    {
+      "person_id": "11223344-aabb-ccdd-eeff-001122334455",
+      "role": "neighbor",
+      "context": {
+        "group": "Neighborhood",
+        "how_met": "neighborhood",
+        "where": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0635,
+            "lng": 34.7743
+          },
+          "ZIP_code": "6688101",
+          "addition": "Rothschild Blvd"
+        },
+        "since": "2018-09-01"
+      },
+      "interaction": {
+        "last_contact": "2026-02-10T09:00:00Z",
+        "frequency": "rarely",
+        "channels": [
+          "in_person"
+        ]
+      }
+    },
+    {
+      "person_id": "cc112233-4455-6677-8899-aabbccddeeff",
+      "given_nickname": "Joshy",
+      "role": "grad school friend",
+      "context": {
+        "group": "Academia",
+        "how_met": "school",
+        "where": {
+          "city": "Cambridge",
+          "region": "Massachusetts",
+          "country": "United States",
+          "country_code": "US",
+          "coordinates": {
+            "lat": 42.3601,
+            "lng": -71.0942
+          },
+          "ZIP_code": "02139",
+          "addition": "Massachusetts Institute of Technology"
+        },
+        "since": "2010-03-01"
+      },
+      "attitude": {
+        "as_of": "2025-08-10",
+        "valence": "positive",
+        "score": 0.78,
+        "dimensions": {
+          "trust": 0.85,
+          "respect": 0.8,
+          "closeness": 0.65,
+          "influence": 0.4
+        },
+        "tags": [
+          "funny",
+          "sharp",
+          "reliable"
+        ],
+        "notes": "Met in the same MIT cohort. Lost touch for a few years after graduation but reconnected at NeurIPS 2023."
+      },
+      "interaction": {
+        "last_contact": "2025-12-01T19:00:00Z",
+        "frequency": "rarely",
+        "channels": [
+          "whatsapp",
+          "in_person"
+        ]
+      }
+    }
+  ],
+  "residency": [
+    {
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0635,
+          "lng": 34.7743
+        },
+        "ZIP_code": "6688101",
+        "addition": "12 Rothschild Blvd, Apt 4B"
+      },
+      "start_date": "2018-09-01",
+      "end_date": null,
+      "type": "owned",
+      "notes": "Current family home."
+    },
+    {
+      "address": {
+        "city": "London",
+        "region": "England",
+        "country": "United Kingdom",
+        "country_code": "GB",
+        "coordinates": {
+          "lat": 51.522,
+          "lng": -0.0865
+        },
+        "ZIP_code": "E2 7PT",
+        "addition": "Flat 3, Bethnal Green"
+      },
+      "start_date": "2014-07-01",
+      "end_date": "2017-08-31",
+      "type": "rented",
+      "notes": "Lived here during employment at Google DeepMind."
+    },
+    {
+      "address": {
+        "city": "Cambridge",
+        "region": "Massachusetts",
+        "country": "United States",
+        "country_code": "US",
+        "coordinates": {
+          "lat": 42.3601,
+          "lng": -71.0942
+        },
+        "ZIP_code": "02139",
+        "addition": "Graduate student housing, MIT"
+      },
+      "start_date": "2009-09-01",
+      "end_date": "2014-05-31",
+      "type": "dormitory",
+      "notes": "PhD student housing at MIT."
+    },
+    {
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0853,
+          "lng": 34.7818
+        },
+        "ZIP_code": "6473200",
+        "addition": "Family home, Florentin neighborhood"
+      },
+      "start_date": "1985-06-14",
+      "end_date": "2003-07-01",
+      "type": "family_home",
+      "notes": "Grew up here."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "category": "programming",
+      "proficiency": "expert",
+      "used_since": "2012-03-01",
+      "last_used": "2026-03-01",
+      "certifications": []
+    },
+    {
+      "name": "R",
+      "category": "data_analysis",
+      "proficiency": "advanced",
+      "used_since": "2015-09-01",
+      "last_used": "2025-11-01",
+      "certifications": []
+    },
+    {
+      "name": "fMRI data analysis",
+      "category": "lab_technique",
+      "proficiency": "expert",
+      "used_since": "2012-01-01",
+      "last_used": "2025-09-15",
+      "certifications": []
+    },
+    {
+      "name": "Public speaking",
+      "category": "communication",
+      "proficiency": "advanced",
+      "used_since": "2010-01-01",
+      "last_used": "2026-02-20",
+      "certifications": []
+    },
+    {
+      "name": "TensorFlow",
+      "category": "software",
+      "proficiency": "intermediate",
+      "used_since": "2020-04-01",
+      "last_used": "2025-06-01",
+      "certifications": [
+        {
+          "name": "TensorFlow Developer Certificate",
+          "issuer": "Google",
+          "issued_at": "2021-04-15",
+          "expires": null,
+          "credential_id": "TF-2021-44821"
+        }
+      ]
+    },
+    {
+      "name": "Academic grant writing",
+      "category": "research",
+      "proficiency": "expert",
+      "used_since": "2015-01-01",
+      "last_used": "2026-01-10",
+      "certifications": []
+    }
+  ],
+  "personality": {
+    "traits": [
+      "analytical",
+      "empathetic",
+      "curious",
+      "perfectionist",
+      "introverted",
+      "resilient"
+    ],
+    "values": [
+      "truth",
+      "family",
+      "education",
+      "justice",
+      "creativity"
+    ],
+    "mbti": "INTJ",
+    "big_five": {
+      "openness": 0.88,
+      "conscientiousness": 0.82,
+      "extraversion": 0.35,
+      "agreeableness": 0.72,
+      "neuroticism": 0.4
+    },
+    "enneagram": "5w4",
+    "zodiac": {
+      "western": "Gemini",
+      "chinese": "Ox"
+    },
+    "interests_hobbies": [
+      "chess",
+      "hiking",
+      "cycling",
+      "classical piano",
+      "reading (science fiction, literary fiction)",
+      "cooking",
+      "watching basketball (Maccabi Tel Aviv)",
+      "watching tennis"
+    ],
+    "phobias": [
+      "claustrophobia"
+    ],
+    "quirks": [
+      "hums while thinking",
+      "color-codes all notes",
+      "always arrives 10 minutes early"
+    ]
+  },
+  "biography": {
+    "narrative": "Miriam Rachel Cohen is an Israeli-American cognitive scientist and AI researcher born in Tel Aviv. She grew up in the Florentin neighbourhood and went on to complete her PhD at MIT before joining Google DeepMind in London. She returned to Israel in 2017 as an Associate Professor at Tel Aviv University, drawn back by the academic appointment and by a deep attachment to the city itself — the light, the pace, the market near her childhood home. She is internationally recognized for her work on human-AI interaction. Outside the lab she reads widely, plays piano, cycles on weekends, and follows Maccabi Tel Aviv basketball with entirely too much emotional investment.",
+    "milestones": [
+      {
+        "date": "1985-06-14",
+        "title": "Born",
+        "category": "personal",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": "6423906",
+          "addition": "Ichilov Hospital"
+        }
+      },
+      {
+        "date": "2003-06-30",
+        "title": "High School Graduation",
+        "description": "Graduated valedictorian from Tel Aviv Arts & Sciences High School",
+        "category": "education",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": "6473421",
+          "addition": null
+        }
+      },
+      {
+        "date": "2007-06-30",
+        "title": "B.Sc. Computer Science — Magna Cum Laude",
+        "category": "education",
+        "location": {
+          "city": "Jerusalem",
+          "region": "Jerusalem District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 31.7767,
+            "lng": 35.2345
+          },
+          "ZIP_code": "9190401",
+          "addition": "Hebrew University, Mount Scopus"
+        }
+      },
+      {
+        "date": "2007-08-01",
+        "title": "IDF Service Completed",
+        "description": "Mandatory service completed in Intelligence Corps (Unit 8200)",
+        "category": "military",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": null,
+          "addition": "Unit 8200 HQ"
+        }
+      },
+      {
+        "date": "2009-09-01",
+        "title": "Began PhD at MIT",
+        "category": "education",
+        "location": {
+          "city": "Cambridge",
+          "region": "Massachusetts",
+          "country": "United States",
+          "country_code": "US",
+          "coordinates": {
+            "lat": 42.3601,
+            "lng": -71.0942
+          },
+          "ZIP_code": "02139",
+          "addition": "Massachusetts Institute of Technology"
+        }
+      },
+      {
+        "date": "2014-05-31",
+        "title": "PhD Awarded — Cognitive Science & AI",
+        "category": "education",
+        "location": {
+          "city": "Cambridge",
+          "region": "Massachusetts",
+          "country": "United States",
+          "country_code": "US",
+          "coordinates": {
+            "lat": 42.3601,
+            "lng": -71.0942
+          },
+          "ZIP_code": "02139",
+          "addition": "Massachusetts Institute of Technology"
+        }
+      },
+      {
+        "date": "2014-07-01",
+        "title": "Joined Google DeepMind",
+        "category": "career",
+        "location": {
+          "city": "London",
+          "region": "England",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "coordinates": {
+            "lat": 51.5074,
+            "lng": -0.1278
+          },
+          "ZIP_code": "N1C 4AG",
+          "addition": "Google DeepMind, Kings Cross"
+        }
+      },
+      {
+        "date": "2016-07-03",
+        "title": "Married David Cohen",
+        "category": "family",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": "6473421",
+          "addition": "Dan Hotel Tel Aviv"
+        }
+      },
+      {
+        "date": "2017-10-01",
+        "title": "Appointed Associate Professor, Tel Aviv University",
+        "category": "career",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.1133,
+            "lng": 34.8044
+          },
+          "ZIP_code": "6997801",
+          "addition": "Tel Aviv University, Ramat Aviv"
+        }
+      },
+      {
+        "date": "2019-03-12",
+        "title": "First Child Born",
+        "category": "family",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": "6423906",
+          "addition": "Ichilov Hospital"
+        }
+      },
+      {
+        "date": "2021-11-08",
+        "title": "Second Child Born",
+        "category": "family",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.0853,
+            "lng": 34.7818
+          },
+          "ZIP_code": "6423906",
+          "addition": "Ichilov Hospital"
+        }
+      },
+      {
+        "date": "2023-09-15",
+        "title": "Published landmark paper on Human-AI Trust",
+        "category": "career",
+        "description": "Paper cited 400+ times within 6 months of publication",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.1133,
+            "lng": 34.8044
+          },
+          "ZIP_code": "6997801",
+          "addition": "Tel Aviv University"
+        }
+      },
+      {
+        "date": "2001-07-18",
+        "title": "First Concert — Radiohead, Hayarkon Park",
+        "category": "personal",
+        "description": "Attended with school friends. Age 16. Standing section, centre. One of those evenings that stays filed under 'before and after'.",
+        "location": {
+          "city": "Tel Aviv",
+          "region": "Tel Aviv District",
+          "country": "Israel",
+          "country_code": "IL",
+          "coordinates": {
+            "lat": 32.1008,
+            "lng": 34.8003
+          },
+          "ZIP_code": "6249001",
+          "addition": "Hayarkon Park Amphitheatre"
+        }
+      }
+    ],
+    "military_service": {
+      "country": "Israel",
+      "branch": "Israel Defense Forces (IDF)",
+      "rank": "First Sergeant",
+      "service_number": "IDF-8200-5521",
+      "from": "2003-07-01",
+      "to": "2005-07-01",
+      "conflicts": [],
+      "decorations": [
+        "Excellence in Service Ribbon"
+      ],
+      "discharge_type": "honorable"
+    },
+    "criminal_record": {
+      "has_record": false,
+      "offenses": []
+    },
+    "immigration": [
+      {
+        "from_country": "Israel",
+        "to_country": "United States",
+        "date": "2009-08-15",
+        "visa_type": "F-1 Student Visa",
+        "status": "temporary_resident"
+      },
+      {
+        "from_country": "United States",
+        "to_country": "United Kingdom",
+        "date": "2014-06-15",
+        "visa_type": "Tier 2 Skilled Worker",
+        "status": "temporary_resident"
+      },
+      {
+        "from_country": "United Kingdom",
+        "to_country": "Israel",
+        "date": "2017-09-01",
+        "visa_type": "Citizen Return",
+        "status": "citizen"
+      }
+    ]
+  },
+  "financial": {
+    "credit_score": 820,
+    "bank_accounts": [
+      {
+        "bank": "Bank Leumi",
+        "account_type": "checking",
+        "country": "IL",
+        "iban": "IL620108000000099999999",
+        "balance": {
+          "amount": 34200,
+          "currency": "ILS"
+        }
+      },
+      {
+        "bank": "Bank of America",
+        "account_type": "savings",
+        "country": "US",
+        "iban": "US12345678901234567890",
+        "balance": {
+          "amount": 8500,
+          "currency": "USD"
+        }
+      }
+    ],
+    "cash": [
+      {
+        "amount": {
+          "amount": 800,
+          "currency": "ILS"
+        },
+        "where": "personal wallet"
+      },
+      {
+        "amount": {
+          "amount": 200,
+          "currency": "USD"
+        },
+        "where": "inside the brown envelope in the top-left drawer of the study desk"
+      }
+    ],
+    "loans": [
+      {
+        "lender": "Bank Leumi",
+        "principal": {
+          "amount": 900000,
+          "currency": "ILS"
+        },
+        "remaining": {
+          "amount": 620000,
+          "currency": "ILS"
+        },
+        "interest_rate": 3.8,
+        "opened": "2018-09-01",
+        "due": "2043-09-01",
+        "notes": "Mortgage on the Rothschild Blvd apartment. Joint with David Cohen."
+      }
+    ],
+    "debts": [
+      {
+        "to": "Tamar Ben-David",
+        "to_person_id": "a1b2c3d4-1234-5678-9abc-def012345678",
+        "amount": {
+          "amount": 1500,
+          "currency": "ILS"
+        },
+        "since": "2025-11-10",
+        "notes": "Covered Miriam's share at a group dinner while her card was blocked. To be returned."
+      }
+    ],
+    "deposits": [
+      {
+        "institution": "Bank Leumi",
+        "type": "pension",
+        "amount": {
+          "amount": 210000,
+          "currency": "ILS"
+        },
+        "opened": "2017-10-01",
+        "matures": "2047-06-14",
+        "notes": "Employer-matched pension plan through Tel Aviv University."
+      },
+      {
+        "institution": "IBI Investment House",
+        "type": "investment_account",
+        "amount": {
+          "amount": 55000,
+          "currency": "ILS"
+        },
+        "opened": "2021-03-15",
+        "matures": null,
+        "notes": "General investment portfolio. Mix of ETFs and Israeli bonds."
+      }
+    ]
+  },
+  "digital": {
+    "usernames": [
+      "miricohen",
+      "miri_cog"
+    ],
+    "websites": [
+      "https://miriamcohen.ac.il"
+    ],
+    "pgp_key_fingerprint": "4A1B 2C3D 4E5F 6A7B 8C9D 0E1F 2A3B 4C5D 6E7F 8A9B"
+  },
+  "notes": [
+    {
+      "id": "note-001",
+      "author": "registry_admin",
+      "date": "2025-03-01T14:22:00Z",
+      "category": "verification",
+      "text": "Identity verified against civil registry. All documents checked."
+    },
+    {
+      "id": "note-002",
+      "author": "miriam.cohen",
+      "date": "2026-01-18T22:10:00Z",
+      "category": "personal",
+      "text": "Finished Klara and the Sun last night. One of the most affecting things I have read in years — the narrator's voice stayed with me in a way I didn't expect. Ishiguro somehow made me feel the limits of perception more viscerally than any paper I've read on the subject."
+    },
+    {
+      "id": "note-003",
+      "author": "miriam.cohen",
+      "date": "2025-11-28T09:15:00Z",
+      "category": "personal",
+      "text": "Back into Beethoven's late string quartets this week — Op. 131 specifically. There's a structural patience to it that I find completely settling during long writing sessions. Also been listening to Noa Kirel, which my students find very funny."
+    },
+    {
+      "id": "note-004",
+      "author": "miriam.cohen",
+      "date": "2025-09-04T08:40:00Z",
+      "category": "personal",
+      "text": "Found a coffee place in Florentin — Café Levinsky 41. Tiny, neighbourhood feel, excellent pour-over. Ten-minute walk from home and it's already becoming a morning ritual. Also finally tried HaBasta properly for a long Friday lunch — seasonal menu, outstanding."
+    },
+    {
+      "id": "note-005",
+      "author": "miriam.cohen",
+      "date": "2026-02-14T21:30:00Z",
+      "category": "personal",
+      "text": "Someone at the department asked if I believe in astrology. I find the question genuinely interesting. I don't think the positions of celestial bodies at my birth shaped my personality — but I do think people use zodiac descriptions as a mirror, and mirrors can be useful even when they're approximate. I'm a Gemini, apparently. The duality thing doesn't feel entirely wrong. The Ox in the Chinese calendar — stubborn, hardworking, private — fits better than I'd like to admit."
+    },
+    {
+      "id": "note-006",
+      "author": "miriam.cohen",
+      "date": "2025-10-03T08:55:00Z",
+      "category": "personal",
+      "text": "If I could go anywhere I haven't been: Kyoto. Specifically in autumn. There's a kind of deliberateness to how the city is designed — the spatial logic of the temples, the way noise is managed, the relationship between inside and outside — that I want to experience directly. I've read too much about it. Time to actually go."
+    },
+    {
+      "id": "note-007",
+      "author": "miriam.cohen",
+      "date": "2025-06-20T10:10:00Z",
+      "category": "personal",
+      "text": "Friday morning ritual: up at 6:30, walk to the Carmel Market alone before it fills up. Buy whatever looks good — no list, no plan. Home by 8:30, cook something slow for Shabbat. I've been doing this since we moved to Rothschild in 2018 and it's the one weekly thing that feels entirely mine."
+    },
+    {
+      "id": "note-008",
+      "author": "miriam.cohen",
+      "date": "2024-11-09T16:45:00Z",
+      "category": "personal",
+      "text": "Picked up another Philip K. Dick first edition at the Jaffa flea market — 'Do Androids Dream of Electric Sheep?', 1968 Doubleday, decent condition. The spine has a crack but the dust jacket is intact. Now up to eleven in the collection. There's something satisfying about owning a physical object that was printed before I was born and still thinking through the same questions."
+    }
+  ],
+  "pets": [
+    {
+      "name": "Lentil",
+      "species": "cat",
+      "breed": "domestic shorthair",
+      "since": "2020-06-01",
+      "end_date": null,
+      "passed_on": null
+    }
+  ],
+  "ownership": [
+    {
+      "name": "Apartment — 12 Rothschild Blvd, Tel Aviv",
+      "category": "real_estate",
+      "description": "3-bedroom apartment, 4th floor, 98 sqm.",
+      "acquired_date": "2018-09-01",
+      "acquisition_method": "purchased",
+      "ownership_share": 0.5,
+      "co_owners": [
+        "b7c1a4e2-91d3-4f2a-8e56-4a2b7c3d8901"
+      ],
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0635,
+          "lng": 34.7743
+        },
+        "ZIP_code": "6688101",
+        "addition": "12 Rothschild Blvd, Apt 4B"
+      },
+      "identifier": "IL-LAND-REG-88421-TLV",
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": {
+        "amount": 2400000,
+        "currency": "ILS",
+        "as_of": "2025-01-01"
+      },
+      "notes": "Co-owned equally with spouse David Cohen."
+    },
+    {
+      "name": "MacBook Pro 14\" M3 Pro",
+      "category": "device",
+      "description": "Apple MacBook Pro 14-inch, M3 Pro chip, 36GB RAM, 1TB SSD, Space Black. Primary work machine.",
+      "acquired_date": "2024-02-10",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": null,
+      "identifier": "C02XG2JHJGH7",
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": null,
+      "notes": null
+    },
+    {
+      "name": "iPhone 15 Pro",
+      "category": "device",
+      "description": "Apple iPhone 15 Pro, 256GB, Natural Titanium.",
+      "acquired_date": "2023-10-01",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": null,
+      "identifier": "IMEI-352099001761481",
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": null,
+      "notes": null
+    },
+    {
+      "name": "Specialized Diverge Gravel Bike",
+      "category": "vehicle",
+      "description": "Specialized Diverge Expert Carbon, 2023. Used for club rides and weekend cycling.",
+      "acquired_date": "2022-04-15",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0635,
+          "lng": 34.7743
+        },
+        "ZIP_code": "6688101",
+        "addition": "12 Rothschild Blvd, storage room"
+      },
+      "identifier": "SN-SPZ-2022-88771",
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": {
+        "amount": 8500,
+        "currency": "ILS",
+        "as_of": "2024-06-01"
+      },
+      "notes": null
+    },
+    {
+      "name": "Yamaha U1 Upright Piano",
+      "category": "furniture",
+      "description": "Yamaha U1 acoustic upright piano, polished ebony. Purchased second-hand.",
+      "acquired_date": "2019-03-20",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0635,
+          "lng": 34.7743
+        },
+        "ZIP_code": "6688101",
+        "addition": "12 Rothschild Blvd, Apt 4B — living room"
+      },
+      "identifier": null,
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": {
+        "amount": 12000,
+        "currency": "ILS",
+        "as_of": "2024-01-01"
+      },
+      "notes": "Tuned twice a year."
+    },
+    {
+      "name": "MacBook Pro 13\" 2016",
+      "category": "device",
+      "description": "Apple MacBook Pro 13-inch, 2016. Retired — used as secondary machine for students.",
+      "acquired_date": "2016-11-01",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": null,
+      "identifier": "C02TP1ZXGTFM",
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": null,
+      "notes": "Retired from daily use in 2024."
+    },
+    {
+      "name": "Science Fiction First Edition Collection",
+      "category": "collectible",
+      "description": "Collection of first edition hardcovers and paperbacks — primarily Philip K. Dick, Ursula K. Le Guin, and Stanisław Lem. Acquired gradually from flea markets, antiquarian dealers, and estate sales. Currently 11 volumes.",
+      "acquired_date": "2016-04-01",
+      "acquisition_method": "purchased",
+      "ownership_share": 1.0,
+      "co_owners": [],
+      "address": {
+        "city": "Tel Aviv",
+        "region": "Tel Aviv District",
+        "country": "Israel",
+        "country_code": "IL",
+        "coordinates": {
+          "lat": 32.0635,
+          "lng": 34.7743
+        },
+        "ZIP_code": "6688101",
+        "addition": "12 Rothschild Blvd, Apt 4B — study"
+      },
+      "identifier": null,
+      "still_owned": true,
+      "disposed_date": null,
+      "estimated_value": null,
+      "notes": "Not for resale. Started at the Jaffa flea market, 2016."
+    }
+  ],
+  "custom": {
+    "research_id": "TAU-CS-0441",
+    "security_clearance": "confidential",
+    "frequent_flyer": {
+      "airline": "El Al",
+      "number": "LY-9988771",
+      "tier": "gold"
+    }
+  }
+}
